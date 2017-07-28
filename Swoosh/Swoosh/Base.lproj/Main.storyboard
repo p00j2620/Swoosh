@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oyh-WN-Oc6" kind="show" id="Aqt-ri-DG0"/>
+                                    <action selector="getStartedBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YIi-5J-BMe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a team in your city &amp; dominate the league." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-lW-SVT">
@@ -86,15 +86,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="oyh-WN-Oc6" kind="show" identifier="segueToLeagueVC" id="q5X-zH-itc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.33333333333334" y="136.14130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="xRa-mg-GDq">
             <objects>
-                <viewController id="oyh-WN-Oc6" sceneMemberID="viewController">
+                <viewController id="oyh-WN-Oc6" customClass="LeagueVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8fw-27-IuP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +168,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tfP-7y-3Xs" kind="show" id="qsT-Zk-Oyh"/>
+                                    <action selector="nextBtnPressed:" destination="oyh-WN-Oc6" eventType="touchUpInside" id="cIO-1O-Bow"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-OJ-lkV">
@@ -176,7 +179,7 @@
                                 </constraints>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="Uhh-dr-Gzq" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="Xm1-Bc-Smy"/>
+                                    <action selector="leagueVCBackBtnPressed:" destination="oyh-WN-Oc6" eventType="touchUpInside" id="9y4-4z-6fY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,16 +201,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cuL-hm-DcZ"/>
                     </view>
+                    <connections>
+                        <segue destination="tfP-7y-3Xs" kind="show" identifier="segueToSkillsVC" id="vXX-tV-DwF"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueBackToWelcomeVC" id="Sh1-54-WSV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnd-Wv-zTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Uhh-dr-Gzq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="950.72463768115949" y="136.14130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="KsE-AJ-Lft">
             <objects>
-                <viewController id="tfP-7y-3Xs" sceneMemberID="viewController">
+                <viewController id="tfP-7y-3Xs" customClass="SkillVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="C7s-Cl-8SY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,7 +281,7 @@
                                 </constraints>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="fIa-4j-XlO" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="Dce-h8-iF1"/>
+                                    <action selector="backBtnPressedOnSkillVC:" destination="tfP-7y-3Xs" eventType="touchUpInside" id="gKD-3w-86x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -298,9 +304,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0yh-jo-yhg"/>
                     </view>
+                    <connections>
+                        <segue destination="oyh-WN-Oc6" kind="show" identifier="segueBackToLeagueVC" id="zkw-rt-a13"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1h-zP-eEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="fIa-4j-XlO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1736.2318840579712" y="136.14130434782609"/>
         </scene>
@@ -312,4 +320,7 @@
         <image name="swooshLogo" width="119" height="20"/>
         <image name="welcomeScreenBG" width="414" height="736"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zkw-rt-a13"/>
+    </inferredMetricsTieBreakers>
 </document>
