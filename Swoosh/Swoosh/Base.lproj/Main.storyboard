@@ -122,7 +122,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="kl4-dg-buL">
                                 <rect key="frame" x="20" y="212" width="374" height="202"/>
                                 <subviews>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rm-UJ-J43" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                                    <button contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rm-UJ-J43" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.7508829195041099" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -132,8 +132,11 @@
                                         <state key="normal" title="Mens">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="oyh-WN-Oc6" eventType="touchUpInside" id="r6i-Bh-fQY"/>
+                                        </connections>
                                     </button>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PB-73-U7k" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                                    <button contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PB-73-U7k" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="76" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.7508829195041099" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -143,8 +146,11 @@
                                         <state key="normal" title="Womens">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="oyh-WN-Oc6" eventType="touchUpInside" id="Q5f-FN-tsI"/>
+                                        </connections>
                                     </button>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-pm-GaE" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                                    <button contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-pm-GaE" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="152" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.7508829195041099" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -154,16 +160,20 @@
                                         <state key="normal" title="Co-ed">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCoedTapped:" destination="oyh-WN-Oc6" eventType="touchUpInside" id="0pW-Ei-Jd3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXW-gW-Rid" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                            <button contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXW-gW-Rid" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="666" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.7507491437835615" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Pjn-Zk-Q3w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="24"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -202,6 +212,7 @@
                         <viewLayoutGuide key="safeArea" id="cuL-hm-DcZ"/>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="LXW-gW-Rid" id="7TW-0x-WpK"/>
                         <segue destination="tfP-7y-3Xs" kind="show" identifier="segueToSkillsVC" id="vXX-tV-DwF"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueBackToWelcomeVC" id="Sh1-54-WSV"/>
                     </connections>

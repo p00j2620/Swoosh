@@ -9,11 +9,19 @@
 import UIKit
 
 class LeagueVC: UIViewController {
+	
+	var player: Player!
 
-    override func viewDidLoad() {
+	@IBOutlet weak var nextButton: BorderButton!
+	
+	
+	
+	
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        player = Player()
     }
 
 	@IBAction func nextBtnPressed(_ sender: UIButton) {
@@ -22,6 +30,21 @@ class LeagueVC: UIViewController {
 	
 	@IBAction func leagueVCBackBtnPressed(_ sender: UIButton) {
 		performSegue(withIdentifier: "segueBackToWelcomeVC", sender: self)
+	}
+	@IBAction func onMensTapped(_ sender: UIButton) {
+		selectLeague(leagueType: "mens")
+	}
+	@IBAction func onWomensTapped(_ sender: UIButton) {
+		selectLeague(leagueType: "womens")
+	}
+	@IBAction func onCoedTapped(_ sender: UIButton) {
+		selectLeague(leagueType: "coed")
+	}
+	
+	func selectLeague(leagueType: String) {
+		player.desiredLeague = leagueType
+		nextButton.isEnabled = true
+		nextButton.isSelected = false
 	}
 	
 }
